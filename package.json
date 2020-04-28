@@ -17,7 +17,9 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "styled-components": "^5.1.0",
+    "yarn.lock": "^0.0.1-security"
   },
   "resolutions": {
     "babel-jest": "24.7.1"
