@@ -9,15 +9,17 @@ const config = {
   projectId: "crwn-db-e7605",
   storageBucket: "crwn-db-e7605.appspot.com",
   messagingSenderId: "1022165659063",
-  appId: "1:1022165659063:web:60ec524e01274661e48c32"
+  appId: "1:1022165659063:web:60ec524e01274661e48c32",
 };
 
 export const createUserProfileDocument = async (userAuth, addinitialData) => {
   if (!userAuth) return;
 
-  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const userRef = firestore.doc(`users/1231xassadcas`);
+  console.log(userRef);
 
   const snapShot = await userRef.get();
+  console.log(snapShot);
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
@@ -25,10 +27,10 @@ export const createUserProfileDocument = async (userAuth, addinitialData) => {
 
     try {
       await userRef.set({
-        displayName,
-        email,
+        displayName: "Test User",
+        email: "randomEmail:gmail.com",
         createAt,
-        ...addinitialData
+        ...addinitialData,
       });
     } catch (error) {
       console.log("error creating user", error.message);
